@@ -3,12 +3,13 @@ import Graphics.X11.ExtraTypes.XF86
 import XMonad.Util.EZConfig
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Layout.NoBorders
 import XMonad.Util.Run
 import System.IO
 
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/kevin/.xmobarrc"
-  xmonad $ defaultConfig
+  xmonad $ def
     { terminal    = myTerminal
     , modMask     = myModMask
     , borderWidth = myBorderWidth
